@@ -1,6 +1,6 @@
 [versions]
 # ------- Android setting -------
-compose-compiler-version = "1.5.14"
+compose-compiler-version = "1.5.13"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
@@ -11,7 +11,7 @@ kotlin-composePlugin = "1.6.10"
 agp = "8.2.2"
 google-kspPlugin = "1.9.23-1.0.19"
 touchlab-skiePlugin = "0.8.0"
-icerock-mokoPlugin = "0.24.0-alpha-5"
+icerock-mokoPlugin = "0.24.0-beta-5"
 
 # ------- Lib Version -------
 
@@ -87,6 +87,7 @@ moko-resourcesCompose = { module = "dev.icerock.moko:resources-compose", version
 # Decompose
 arkivanov-decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decomposeV" }
 arkivanov-decompose-extensionsCompose = { module = "com.arkivanov.decompose:extensions-compose", version.ref = "decomposeV" }
+arkivanov-decompose-extensionsAndroid = { module = "com.arkivanov.decompose:extensions-android", version.ref = "decomposeV" }
 arkivanov-essenty-lifecycle = { module = "com.arkivanov.essenty:lifecycle", version.ref = "decomposeV" }
 arkivanov-essenty-stateKeeper = { module = "com.arkivanov.essenty:state-keeper", version.ref = "decomposeV" }
 # arkivanov-parcelize-darwinRuntime = { module = "com.arkivanov.parcelize.darwin:runtime", version.ref = "decomposeV"}

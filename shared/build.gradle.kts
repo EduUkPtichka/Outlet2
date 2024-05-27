@@ -32,7 +32,7 @@ kotlin {
         podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "shared"
-            isStatic = true
+            //isStatic = true
 
             export(libs.moko.resources)
             export(libs.moko.graphics)
@@ -73,11 +73,6 @@ kotlin {
             implementation(libs.arkivanov.decompose.extensionsCompose)
         }
 
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
-            // commonTestImplementation("dev.icerock.moko:resources-test:0.23.0")
-        }
-
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
 
@@ -100,6 +95,10 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.version.get()
     }
 
     buildFeatures {

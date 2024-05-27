@@ -8,20 +8,32 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.determent.outlet2.Greeting
+import com.arkivanov.decompose.defaultComponentContext
+import com.determent.outlet2.decompose_core.RootComponentDefault
+import com.determent.outlet2.decompose_core.RootScreenContent
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApplicationTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    GreetingView(Greeting().greet())
-                }
-            }
+
+            val root =
+                RootComponentDefault(
+                    componentContext = defaultComponentContext(),
+
+                )
+
+            RootScreenContent(component = root, modifier = Modifier.fillMaxSize())
+
+//            MyApplicationTheme {
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colorScheme.background
+//                ) {
+//                    GreetingView(Greeting().greet())
+//                }
+//            }
         }
     }
 }

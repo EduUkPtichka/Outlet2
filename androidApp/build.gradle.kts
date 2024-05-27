@@ -42,6 +42,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
     }
@@ -54,6 +55,11 @@ dependencies {
 
     // Jetbrains
     implementation(libs.jetbrains.kotlinx.coroutines.android)
+
+    // Decompose
+    implementation(libs.arkivanov.decompose)
+    implementation(libs.arkivanov.decompose.extensionsCompose)
+    implementation(libs.arkivanov.decompose.extensionsAndroid)
 
     // Project Module
     implementation(projects.shared)
