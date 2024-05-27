@@ -1,5 +1,18 @@
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+use_frameworks!
+platform :ios, '15.0'
+
+project 'iosApp',
+  'dev-release' => :release, 'stage-release' => :release,
+  'dev-debug' => :debug, 'stage-debug' => :debug,
+  'prod-debug' => :debug, 'prod-release' => :release
+
 target 'iosApp' do
-  use_frameworks!
-  platform :ios, '16.0'
+
+  platform :ios, '15.0'
   pod 'shared', :path => '../shared'
 end
+

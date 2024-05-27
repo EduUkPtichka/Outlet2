@@ -181,6 +181,24 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_ROOT}/../../shared/build/cocoapods/framework/shared.framework"
 fi
+if [[ "$CONFIGURATION" == "dev-debug" ]]; then
+  install_framework "${PODS_ROOT}/../../shared/build/cocoapods/framework/shared.framework"
+fi
+if [[ "$CONFIGURATION" == "dev-release" ]]; then
+  install_framework "${PODS_ROOT}/../../shared/build/cocoapods/framework/shared.framework"
+fi
+if [[ "$CONFIGURATION" == "prod-debug" ]]; then
+  install_framework "${PODS_ROOT}/../../shared/build/cocoapods/framework/shared.framework"
+fi
+if [[ "$CONFIGURATION" == "prod-release" ]]; then
+  install_framework "${PODS_ROOT}/../../shared/build/cocoapods/framework/shared.framework"
+fi
+if [[ "$CONFIGURATION" == "stage-debug" ]]; then
+  install_framework "${PODS_ROOT}/../../shared/build/cocoapods/framework/shared.framework"
+fi
+if [[ "$CONFIGURATION" == "stage-release" ]]; then
+  install_framework "${PODS_ROOT}/../../shared/build/cocoapods/framework/shared.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi
