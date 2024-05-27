@@ -1,0 +1,24 @@
+[versions]
+# Setting Android
+compose-compiler-version = "1.5.14"
+
+agp = "8.4.1"
+kotlin = "1.9.24"
+compose = "1.6.7"
+compose-material3 = "1.1.2"
+androidx-activityCompose = "1.8.0"
+
+[libraries]
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+# Google
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+
+[plugins]
+android-application-plugin = { id = "com.android.application", version.ref = "agp" }
+android-library-plugin = { id = "com.android.library", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrains-kotlin-multiplatform-plugin = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+jetbrains-kotlin-native-cocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
