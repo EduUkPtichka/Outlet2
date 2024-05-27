@@ -1,24 +1,112 @@
 [versions]
-# Setting Android
+# ------- Android setting -------
 compose-compiler-version = "1.5.14"
+android-compileSdk = "34"
+android-minSdk = "24"
+android-targetSdk = "34"
 
-agp = "8.4.1"
-kotlin = "1.9.24"
-compose = "1.6.7"
-compose-material3 = "1.1.2"
+# ------- Plugin Version -------
+kotlinPlugin = "1.9.23"
+kotlin-composePlugin = "1.6.10"
+agp = "8.2.2"
+google-kspPlugin = "1.9.23-1.0.19"
+touchlab-skiePlugin = "0.8.0"
+icerock-mokoPlugin = "0.24.0-alpha-5"
+
+# ------- Lib Version -------
+
+# Compose
+jetbrains-composeV = "1.6.10"
+compose-androidV = "1.6.7"
+
+# Jetbrains
+kotlinV = "1.9.24"
+
+# Jetbrains
+jetbrains-kotlinxCollectionsImmutable = "0.3.7"
+jetbrains-kotlinxCoroutinesCore = "1.8.1"
+jetbrains-kotlinxSerializationJson = "1.6.3"
+
+# Jetbrains Ktor-Client
+ktor =  "2.3.11"
+
+# Google
 androidx-activityCompose = "1.8.0"
 
+# Touchlab
+touchlab-skieV = "0.8.0"
+
+kodein-diV = "7.21.2"
+
+# Moko
+moko-resourcesV = "0.24.0-beta-3"
+moko-graphicsV = "0.9.0"
+
+# Decompose
+decomposeV = "3.0.0"
+
 [libraries]
-kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+# Compose Multiplatform
+jetbrains-composeRuntime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "jetbrains-composeV" }
+jetbrains-composeMaterial = { module = "org.jetbrains.compose.material:material", version.ref = "jetbrains-composeV" }
+jetbrains-composeMaterial3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "jetbrains-composeV" }
+jetbrains-composeFoundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "jetbrains-composeV" }
+jetbrains-composeUi = { module = "org.jetbrains.compose.ui:ui", version.ref = "jetbrains-composeV" }
+
+# Jetbrains
+jetbrains-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "jetbrains-kotlinxSerializationJson" }
+jetbrains-kotlinxCollectionsImmutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "jetbrains-kotlinxCollectionsImmutable" }
+jetbrains-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "jetbrains-kotlinxCoroutinesCore" }
+jetbrains-kotlinx-coroutines-core-js = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-js", version.ref = "jetbrains-kotlinxCoroutinesCore" }
+jetbrains-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "jetbrains-kotlinxCoroutinesCore" }
+jetbrains-kotlinx-coroutines-core-iosx64 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-iosx64", version.ref = "jetbrains-kotlinxCoroutinesCore" }
+
+# Jetbrains Ktor-Client
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 
 # Google
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose-androidV" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose-androidV" }
+
+# Touchlab
+touchlab-skie-configurationAnnotations = { module = "co.touchlab.skie:configuration-annotations", version.ref = "touchlab-skieV" }
+
+# Kodein
+kodein-di = { module = "org.kodein.di:kodein-di", version.ref = "kodein-diV"}
+
+# Moko
+moko-resources = { module = "dev.icerock.moko:resources", version.ref = "moko-resourcesV" }
+moko-graphics = { module = "dev.icerock.moko:graphics", version.ref = "moko-graphicsV" }
+moko-resourcesCompose = { module = "dev.icerock.moko:resources-compose", version.ref = "moko-resourcesV" }
+
+# Decompose
+arkivanov-decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decomposeV" }
+arkivanov-decompose-extensionsCompose = { module = "com.arkivanov.decompose:extensions-compose", version.ref = "decomposeV" }
+arkivanov-essenty-lifecycle = { module = "com.arkivanov.essenty:lifecycle", version.ref = "decomposeV" }
+arkivanov-essenty-stateKeeper = { module = "com.arkivanov.essenty:state-keeper", version.ref = "decomposeV" }
+# arkivanov-parcelize-darwinRuntime = { module = "com.arkivanov.parcelize.darwin:runtime", version.ref = "decomposeV"}
+
+# Test
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlinV" }
+
+# ------ Plugins -------
+moko-resourcesGenerator = { module = "dev.icerock.moko:resources-generator", version.ref = "icerock-mokoPlugin" }
 
 [plugins]
 android-application-plugin = { id = "com.android.application", version.ref = "agp" }
 android-library-plugin = { id = "com.android.library", version.ref = "agp" }
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-jetbrains-kotlin-multiplatform-plugin = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-jetbrains-kotlin-native-cocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+google-ksp-plugin = { id = "com.google.devtools.ksp", version.ref = "google-kspPlugin" }
+
+kotlin-android-plugin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinPlugin" }
+jetbrains-kotlin-multiplatform-plugin = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlinPlugin" }
+jetbrains-kotlin-native-cocoapods-plugin = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlinPlugin" }
+jetbrains-compose-multiplatform-plugin = { id = "org.jetbrains.compose", version.ref = "kotlin-composePlugin" }
+jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinPlugin" }
+
+touchlab-skie-plugin = { id = "co.touchlab.skie", version.ref = "touchlab-skiePlugin" }
+moko-mobile-multiplatform-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "icerock-mokoPlugin" }
